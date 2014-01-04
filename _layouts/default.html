@@ -7,11 +7,12 @@
 </head>
 <body>
  
-  <div id="main">
+  <div class="row">
  
     <header>
       <h1> Sean E. Duncan </h1>
       <h2> Web Developer </h2>
+      <h3>H3 content</h3>
     <header>
  
     <nav role="navigation">
@@ -22,12 +23,14 @@
         <li><a href="/contact">Contact</a></li>
       </ul>
     </nav>
-    <div class="row">
-    {{ content }}
-    </div>
-
-    {% include footer.html %}
- 
   </div>
+  <div class="row">
+    {{ content }}
+  </div>
+
+  <div class="row">
+    {% include footer.html %}
+  </div>
+
 </body>
 </html>
