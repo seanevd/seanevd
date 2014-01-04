@@ -2,9 +2,15 @@
   "components/foundation",
   "components/normalize";
 
+//Main Colors
+$red: #C92831;
+$darkred: #84252C;
+$blue: #1E2F41;
+$lightblue: #729896;
+$white: #F1DEB7;
 
 h1 {
-	color: green;
+	color: $blue;
 	font-size: 4em;
 	font-family: helvetica;
 }
@@ -12,4 +18,30 @@ h1 {
 p {
 	color: #666;
 	font-family: helveticaneue;
+}
+
+
+//Header
+.borde {
+	position: fixed;
+	height: 1em;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 99;
+	background-color: #FFF;
+}
+
+.init {
+	background-color: $lightblue;
+	height: 750px;
+	top: 0;
+	left: 0;
+	border: solid white 1em;
+	h1 {
+		color: $white;
+	}
+	h2{
+		color: $blue;
+	}
 }
