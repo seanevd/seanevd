@@ -3,7 +3,7 @@
 <head>
   <meta charset=utf-8 />
   <title> {% if page.title %} {{ page.title }} | {% endif %} Sean E. Duncan </title>
-  <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="stylesheet" href="/css/build/styles.css" />
 </head>
 <body>
  
@@ -22,9 +22,10 @@
         <li><a href="/contact">Contact</a></li>
       </ul>
     </nav>
- 
+    <div class="row">
     {{ content }}
- 
+    </div>
+
     {% include footer.html %}
  
   </div>
