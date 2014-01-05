@@ -34,9 +34,11 @@ p {
 
 .init {
 	background-color: $lightblue;
-	height: 750px;
-	top: 0;
-	left: 0;
+	height: 90%;
+	width: 100%;
+	display: block;
+	padding-top: 0;
+	padding-bottom: 0;
 	border: solid white 1em;
 	h1 {
 		color: $white;
@@ -51,4 +53,7 @@ p {
 	background-color: $darkred;	
 	padding-top: 3em;
 	padding-bottom: 3em;
+	p {
+		color: $white;
+	}
 }
