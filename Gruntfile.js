@@ -43,6 +43,18 @@ module.exports = function(grunt) {
       }
     },
 
+    jekyll: {
+      options: {                          
+        src: '.'
+      },
+      dist: {
+        options: {
+          dest: './_site',
+          config: '_config.yml'
+        }
+      }
+    },
+
     watch: {
       options: {
         livereload: true,
@@ -61,6 +73,13 @@ module.exports = function(grunt) {
           spawn: false,
         }
       },
+      html: {
+        files: ['*.html', '_includes/*.html', '_layouts/*.html', 'css/build/styles.css'],
+        tasks: ['jekyll'],
+        options: {
+          spawn: false,
+        }
+      },
       images: {
         files: ['images/**/*.{png,jpg,gif}', 'images/*.{png,jpg,gif}'],
         tasks: ['imagemin'],
@@ -74,7 +93,7 @@ module.exports = function(grunt) {
       server: {
         options: {
           port: 8000,
-          base: './'
+          base: './_site'
         }
       }
     },
@@ -84,7 +103,7 @@ module.exports = function(grunt) {
   require('load-grunt-tasks')(grunt);
 
 
-  grunt.registerTask('default', ['concat', 'uglify', 'sass', 'imagemin']);
+  grunt.registerTask('default', ['concat', 'uglify', 'sass', 'imagemin', 'jekyll']);
 
   grunt.registerTask('server', ['connect', 'watch']);
 

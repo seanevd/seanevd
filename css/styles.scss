@@ -9,6 +9,14 @@ $blue: #1E2F41;
 $lightblue: #729896;
 $white: #F1DEB7;
 
+html {
+	height: 100%;
+}
+
+body {
+	height: 100%;
+}
+
 h1 {
 	color: $blue;
 	font-size: 4em;
@@ -32,20 +40,41 @@ p {
 	background-color: #FFF;
 }
 
+header {
+	height: 100%;
+}
+
 .init {
 	background-color: $lightblue;
+	background-size: cover;
 	height: 90%;
 	width: 100%;
 	display: block;
-	padding-top: 0;
-	padding-bottom: 0;
 	border: solid white 1em;
+	position: relative;
+	overflow: hidden;
 	h1 {
 		color: $white;
 	}
 	h2{
 		color: $blue;
 	}
+}
+
+.down {
+	bottom: 0;
+	position: absolute;
+	text-align: center;
+	width: inherit;
+}
+
+.spin {
+	position: absolute;
+	width: 25em;
+	height: 25em;
+	right: -50px;
+	bottom: 0;
+	background-color: darken($lightblue, 15%);
 }
 
 //Footer
