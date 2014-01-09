@@ -55,6 +55,15 @@ module.exports = function(grunt) {
       }
     },
 
+    grunticon: {
+       myIcons: {
+          options: {
+            src: "css/icons/",
+            dest: "css/prodicons/"
+          }
+        }
+    },
+
     watch: {
       options: {
         livereload: true,
@@ -103,8 +112,10 @@ module.exports = function(grunt) {
   require('load-grunt-tasks')(grunt);
 
 
-  grunt.registerTask('default', ['concat', 'uglify', 'sass', 'imagemin', 'jekyll']);
+  grunt.registerTask('default', ['concat', 'uglify', 'sass', 'imagemin', 'grunticon', 'jekyll']);
 
   grunt.registerTask('server', ['connect', 'watch']);
+
+  grunt.registerTask('grunticonz', ['grunticon']);
 
 };
