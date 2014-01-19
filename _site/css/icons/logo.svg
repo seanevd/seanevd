@@ -5,12 +5,12 @@
 ]>
 <svg version="1.1"
 	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
-	 x="0px" y="0px" width="401px" height="402px" viewBox="-2.951 -2.959 401 402"
-	 overflow="visible" enable-background="new -2.951 -2.959 401 402" xml:space="preserve">
+	 x="0px" y="0px" width="210px" height="210px" viewBox="-4.448 -4.46 210 210"
+	 overflow="visible" enable-background="new -4.448 -4.46 210 210" xml:space="preserve">
 <defs>
 </defs>
-<path fill="#F1DEB7" d="M214.804,0.238v393.606c100.813-8.979,179.853-93.654,179.853-196.801
-	C394.656,93.894,315.617,9.217,214.804,0.238z"/>
-<path fill="#F1DEB7" d="M182.029,182.138V0C84.832,7.306,7.249,84.923,0,182.138H182.029z"/>
-<path fill="#F1DEB7" d="M1.967,214.018v181.708c95.467-8.923,171.209-85.752,178.42-181.708H1.967z"/>
+<path fill="#F1DEB7" d="M109.22,0.121v200.137c51.262-4.566,91.451-47.62,91.451-100.067C200.671,47.742,160.481,4.687,109.22,0.121
+	z"/>
+<path fill="#F1DEB7" d="M92.556,92.612V0C43.135,3.715,3.686,43.181,0,92.612H92.556z"/>
+<path fill="#F1DEB7" d="M1,108.821v92.393c48.542-4.537,87.054-43.602,90.721-92.393H1z"/>
 </svg>

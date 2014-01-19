@@ -9,6 +9,14 @@ $blue: #1E2F41;
 $lightblue: #729896;
 $white: #F1DEB7;
 
+$browser-context: 16; // Default
+
+@function em($pixels, $context: $browser-context) {
+  @return #{$pixels/$context}em
+}
+
+
+
 html {
 	height: 100%;
 }
@@ -19,8 +27,7 @@ body {
 
 h1 {
 	color: $blue;
-	font-size: 4em;
-	font-family: helvetica;
+
 }
 
 p {
@@ -34,7 +41,6 @@ p {
 	position: fixed;
 	height: 1em;
 	width: 100%;
-	top: 0;
 	left: 0;
 	z-index: 99;
 	background-color: #FFF;
@@ -55,16 +61,49 @@ header {
 	overflow: hidden;
 	h1 {
 		color: $white;
+		margin: 0.5em 0 0.5em 0;
 	}
 	h2{
 		color: $blue;
+		margin: 0.5em 0 0.8em 0;
 	}
-	.row {
+	.small-12, .large-12, .row {
 		height: 100%;
 	}
-	.large-12 {
-		height: 100%;
+	ul {
+		list-style-type: none;
+		li {
+			display: inline;
+			margin-left: 0.6em;
+			margin-right: 0.6em;
+			a {
+				font-weight: 300;
+				margin-left: em(30);
+				line-height: 1.5;
+			}
+			a:hover {
+				line-height: 1.5;
+			}
+		}
 	}
+	
+}
+
+li[class^="icon-"] {
+	opacity: 1;
+	transition: all 0.3s linear;
+	-webkit-transition: all 0.3s linear;
+	width: em(32);
+	height: em(32);
+	background-size: em(22) em(22);
+	line-height: 2em;
+	background-position: left;
+}
+
+li[class^="icon-"]:hover {
+	opacity: 1;						//This needs to get fixed
+	transition: all 0.3s linear;
+	-webkit-transition: all 0.3s linear;
 }
 
 .down {
@@ -74,21 +113,155 @@ header {
 	width: inherit;
 }
 
+.icon-logo {
+	 width: em(210); 
+	 height: em(210);
+	 margin: auto;
+}
+
+.icon-soundcloud, .icon-codepen {
+	background-size: em(20) em(20) !important;
+}
+
 .spin {
 	position: absolute;
-	width: 25em;
-	height: 25em;
-	right: -50px;
+	width: 45em;
+	height: 45em;
+	right: -6em;
+	bottom: -6em;
+	animation: turning 15s linear infinite;
+	-webkit-animation: turning 15s linear infinite;
+}
+
+@keyframes turning {
+	0% {-webkit-transform: rotate(0deg)}
+	100% {-webkit-transform: rotate(360deg)}
+}
+
+@-webkit-keyframes turning {
+	0% {-webkit-transform: rotate(0deg)}
+	100% {-webkit-transform: rotate(360deg)}
+}
+
+.hex {
+	position: absolute;
+	top: 0;
 	bottom: 0;
+	right: 0;
+	left: 0;
+	margin: auto;
+	width: 100%;
 	background-color: darken($lightblue, 15%);
+	height: 57.7333%;
+	&:after  {
+		position: absolute;
+		content: "";
+		width: 100%;
+		height: 100%;
+		background-color: darken($lightblue, 15%);
+		transform:rotate(60deg);
+		-ms-transform:rotate(60deg);
+		-webkit-transform:rotate(60deg);
+	}
+	&:before {
+		@extend .hex:after;
+		transform:rotate(120deg);
+		-ms-transform:rotate(120deg);
+		-webkit-transform:rotate(120deg);
+	}
+}
+
+//Body
+.clear {
+	clear: left;
 }
 
 //Footer
 .ultim {
 	background-color: $darkred;	
-	padding-top: 3em;
-	padding-bottom: 3em;
+	padding-top: 1.75em;
+	padding-bottom: 2.75em;
+	margin: 1em;
 	p {
 		color: $white;
+	}
+	img {
+		border-radius: 50%;
+	}
+}
+.bottom {
+	bottom: 0;
+}
+.top {
+	top: 0;
+}
+
+//Small
+@media only screen {
+	.init {
+		h3 {
+			margin-bottom: 0;
+		}
+
+	}
+	.social {
+		text-transform: uppercase;
+		font-size: 1em;
+		margin: em(10) 0 em(15) 0;
+		a {
+			color: $white;
+			margin: em(10) em(10) em(15) em(10);
+		}
+	}
+
+	.insetter {
+		padding-top: 1.875rem;
+	}
+
+}
+
+//Medium
+@media only screen and (min-width: 40.063em) {
+	.init {
+		h1 {
+			font-size: 2.5em;
+		}
+	}
+
+}
+
+
+//Large
+@media only screen and (min-width: 64.063em) {
+	.init {
+		h1 {
+			font-size: 3em;
+		}
+		h3 {
+			margin-bottom: 0.6em;
+		}
+	}
+
+
+	.pullup {
+		margin-top: -15.625rem;
+	}
+}
+
+//X-Large
+@media only screen and (min-width: 90.063em) {
+	.init {
+		h1 {
+			font-size: 5em;
+		}
+	}
+}
+
+//XXL
+@media only screen and (min-width: 120.063em) {
+	.init {
+		h1 {
+			font-size: 5.5em;
+		}
 	}
 }

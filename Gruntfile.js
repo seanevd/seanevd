@@ -36,7 +36,7 @@ module.exports = function(grunt) {
       dynamic: {
         files: [{
           expand: true,
-          cwd: 'images/',
+          cwd: 'img/',
           src: ['**/*.{png,jpg,gif}'],
           dest: 'images/'
         }]
@@ -59,7 +59,7 @@ module.exports = function(grunt) {
        myIcons: {
           options: {
             src: "css/icons/",
-            dest: "css/prodicons/"
+            dest: "css/build/icons/"
           }
         }
     },
@@ -113,6 +113,8 @@ module.exports = function(grunt) {
 
 
   grunt.registerTask('default', ['concat', 'uglify', 'sass', 'imagemin', 'grunticon', 'jekyll']);
+
+  grunt.registerTask('js', ['concat', 'uglify']);
 
   grunt.registerTask('server', ['connect', 'watch']);
 
