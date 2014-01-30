@@ -13,6 +13,8 @@
     "grunt-jekyll": "~0.4.1",
     "grunt-grunticon-sass": "~0.1.6",
     "grunt-grunticon": "~1.0.0-beta.0",
-    "grunt-grunticon-highrespng": "~0.3.2"
+    "grunt-grunticon-highrespng": "~0.3.2",
+    "grunt-responsive-images": "~0.1.1",
+    "grunt-autoprefixer": "~0.6.5"
   }
 }

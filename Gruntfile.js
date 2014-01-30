@@ -10,9 +10,20 @@ module.exports = function(grunt) {
           style: 'compressed'
         },
         files: {
-          'css/build/styles.css': 'css/styles.scss'
+          'css/preprefix/styles.css': 'css/styles.scss'
         }
       }
+    },
+
+    autoprefixer: {
+
+      single_file: {
+        options: {
+          // Target-specific options go here.
+        },
+        src: 'css/preprefix/styles.css',
+        dest: 'css/build/styles.css'
+      },
     },
 
     concat: {
@@ -64,6 +75,50 @@ module.exports = function(grunt) {
         }
     },
 
+    responsive_images: {
+      myTask: {
+        options: {
+          sizes: [{
+            width: 220,
+            height: 220,
+            aspectRatio: false,
+          },
+          {
+            width: 470,
+            height: 470,
+            aspectRatio: false,
+          },
+          {
+            width: 470,
+            height: 220,
+            aspectRatio: false,
+          },
+          {
+            width: 220,
+            height: 470,
+            aspectRatio: false,
+          },
+          {
+            width: 970,
+            height: 470,
+            aspectRatio: false,
+          },
+          {
+            width: 610,
+            height: 610,
+            aspectRatio: false,
+          }
+          ]
+        },
+        files: [{
+          expand: true,
+          src: ['**.{jpg,gif,png}'],
+          cwd: 'screens/',
+          dest: 'img/'
+        }]
+      }
+  },
+
     watch: {
       options: {
         livereload: true,
@@ -77,21 +132,14 @@ module.exports = function(grunt) {
       },
       css: {
         files: ['css/*.scss'],
-        tasks: ['sass'],
+        tasks: ['sass', 'autoprefixer', 'jekyll'],
         options: {
           spawn: false,
         }
       },
       html: {
-        files: ['*.html', '_includes/*.html', '_layouts/*.html', 'css/build/styles.css'],
+        files: ['*.html', '_includes/*.html', '_layouts/*.html'],
         tasks: ['jekyll'],
-        options: {
-          spawn: false,
-        }
-      },
-      images: {
-        files: ['images/**/*.{png,jpg,gif}', 'images/*.{png,jpg,gif}'],
-        tasks: ['imagemin'],
         options: {
           spawn: false,
         }
@@ -118,6 +166,6 @@ module.exports = function(grunt) {
 
   grunt.registerTask('server', ['connect', 'watch']);
 
-  grunt.registerTask('grunticonz', ['grunticon']);
+  grunt.registerTask('image', ['responsive_images', 'imagemin']);
 
 };
