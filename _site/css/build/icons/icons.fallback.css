@@ -14,7 +14,15 @@
 
 .icon-github { background-image: url(png/github.png); background-repeat: no-repeat; }
 
+.icon-logo-black { background-image: url(png/logo-black.png); background-repeat: no-repeat; }
+
+.icon-logo-color { background-image: url(png/logo-color.png); background-repeat: no-repeat; }
+
+.icon-logo-grey { background-image: url(png/logo-grey.png); background-repeat: no-repeat; }
+
 .icon-logo { background-image: url(png/logo.png); background-repeat: no-repeat; }
+
+.icon-mail { background-image: url(png/mail.png); background-repeat: no-repeat; }
 
 .icon-screen { background-image: url(png/screen.png); background-repeat: no-repeat; }
 

@@ -8,7 +8,7 @@ $red: #C92831;
 $darkred: #84252C;
 $blue: #1E2F41;
 $lightblue: #729896;
-$white: #F1DEB7;
+$white: #F1DEB7; //rgba(241,222,183, 0.9)
 
 $browser-context: 16; // Default
 
@@ -24,6 +24,7 @@ html {
 
 body {
 	height: 100%;
+	background-color: #EEE;
 }
 
 h1 {
@@ -41,15 +42,20 @@ p {
 //Header
 .borde {
 	position: fixed;
-	height: 1em;
+	height: 100%;
 	width: 100%;
+	background-color: #EEE;
+	top: 0;
 	left: 0;
 	z-index: 99;
-	background-color: #FFF;
 }
 
 header {
 	height: 100%;
+}
+
+.page header {
+	height: auto;
 }
 
 .init {
@@ -61,14 +67,7 @@ header {
 	border: solid white 1em;
 	position: relative;
 	overflow: hidden;
-	h1 {
-		color: $white;
-		margin: 0.5em 0 0.5em 0;
-	}
-	h2{
-		color: $blue;
-		margin: 0.5em 0 0.8em 0;
-	}
+	border-bottom: none;
 	.small-12, .large-12, .row {
 		height: 100%;
 	}
@@ -101,11 +100,6 @@ li[class^="icon-"] {
 	background-position: left;
 }
 
-li[class^="icon-"]:hover {
-	opacity: 1;						//This needs to get fixed
-	transition: all 0.3s linear;
-}
-
 .down {
 	bottom: 0;
 	position: absolute;
@@ -113,57 +107,43 @@ li[class^="icon-"]:hover {
 	width: inherit;
 }
 
-.icon-logo {
-	 width: em(210); 
-	 height: em(210);
+.icon-logo-color, .icon-logo-grey {
+	 width: em(400); 
+	 height: em(400);
 	 margin: auto;
+	 position: fixed;
+	 left: em(-150);
+	 top: em(-150);
+	 transform: rotate(90deg);
+	 border-radius: 50% 50% 50% 0;
+	opacity: 1;
+	transition: all 3s linear;
+}
+
+.icon-logo-grey:hover {
+	opacity: 0;
+	transition: all 3s linear;
 }
 
 .icon-soundcloud, .icon-codepen {
 	background-size: em(20) em(20) !important;
 }
 
-.spin {
-	position: absolute;
-	width: 45em;
-	height: 45em;
-	right: -6em;
-	bottom: -6em;
-	animation: turning 15s linear infinite;
-}
 
-@keyframes turning {
-	0% {transform: rotate(0deg)}
-	100% {transform: rotate(360deg)}
-}
-
-.hex {
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	right: 0;
-	left: 0;
-	margin: auto;
-	width: 100%;
-	background-color: darken($lightblue, 15%);
-	height: 57.7333%;
-	&:after  {
-		position: absolute;
-		content: "";
-		width: 100%;
-		height: 100%;
-		background-color: darken($lightblue, 15%);
-		transform:rotate(60deg);
-	}
-	&:before {
-		@extend .hex:after;
-		transform:rotate(120deg);
-	}
-}
 
 //Body
 .clear {
 	clear: left;
+}
+
+.row.push {
+	padding-top: 260px;
+}
+
+.active {
+	padding-bottom: 260px;
+	margin-top: -260px;
+	height: auto;
 }
 
 //Footer
@@ -179,21 +159,93 @@ li[class^="icon-"]:hover {
 		border-radius: 50%;
 	}
 }
+.borde.bottom, .borde.top {
+	height: 1em;
+}	
+.borde.right, .borde.left {
+	width: 1em;
+}
 .bottom {
 	bottom: 0;
+	top: inherit;
 }
 .top {
 	top: 0;
 }
+.right {
+	right: 0;
+	left: inherit;
+}
+.left {
+	left: 0;
+}
+
+@keyframes turning {
+	0% {transform: rotate(0deg)}
+	100% {transform: rotate(360deg)}
+}
+
+@keyframes spin {
+	0% {transform: rotate(90deg);}
+	100% {transform: rotate(450deg);}
+}
 
 //Small
 @media only screen {
+	//header
+	.spin {
+		position: absolute;
+		width: 20em;
+		height: 20em;
+		right: -6em;
+		bottom: -6em;
+		animation: turning 15s infinite linear;
+	}
+
+	.hex {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		margin: auto;
+		width: 100%;
+		background-color: darken($lightblue, 15%);
+		height: 57.7333%;
+		&:after  {
+			position: absolute;
+			content: "";
+			width: 100%;
+			height: 100%;
+			background-color: darken($lightblue, 15%);
+			transform:rotate(60deg);
+		}
+		&:before {
+			@extend .hex:after;
+			transform:rotate(120deg);
+		}
+	}
 	.init {
+		h1 {
+			color: $white;
+			margin: 0 0 0 0;
+		}
+		h2 {
+			color: $blue;
+			margin: 0 0 0 0;
+		}
 		h3 {
 			margin-bottom: 0;
 		}
-
 	}
+
+	.icon-logo {
+		width: em(150); 
+		height: em(150);
+		margin: auto;
+		background-size: em(150) em(150);
+	}
+
 	.social {
 		text-transform: uppercase;
 		font-size: 1em;
@@ -204,6 +256,7 @@ li[class^="icon-"]:hover {
 		}
 	}
 
+	//body
 	.insetter {
 		padding-top: 1.875rem;
 	}
@@ -212,29 +265,118 @@ li[class^="icon-"]:hover {
 		margin: em(200) 0 em(200) 0;
 	}
 
+	.row {
+		padding-left: 1em;
+		padding-right: 1em;
+	}
+
+	.page h1 {
+		font-size: 3.25em;
+		text-transform: uppercase;
+	}
+
+	.ovrly {
+		overflow: hidden;
+		position: relative;
+		display: block;
+		z-index: 1
+	}
+
+	.ovrly:before {
+		position: absolute;
+		content: "";
+		z-index: 35;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: #666;
+		opacity: 0.6;
+	}
+
+	.centerdiv {
+		margin: auto;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		width: em(200);
+		height: em(60);
+		text-align: center;
+		line-height: em(60);
+		background-color: $white;
+		z-index: 45;
+		overflow: hidden;
+		span {
+			color: $blue;
+		}
+	}
+	.text {
+		text-shadow: 1px 1px #EEE;
+	}
+	//footer
+	footer {
+		h3 {
+			color: $white;
+		}
+		ul {
+			list-style-type: none;
+			li {
+				a {
+					color: $white;
+					padding-left: em(30);
+					transition: all 0.4s;
+					&:hover {
+						color: darken($white, 5%);
+						transition: all 0.4s;
+					}
+				}	
+			}
+		}
+	}
 }
 
 //Medium
 @media only screen and (min-width: 40.063em) {
+	//header
+	.spin {
+		width: 45em;
+		height: 45em;
+		right: -6em;
+		bottom: -6em;
+	}
 	.init {
 		h1 {
 			font-size: 2.5em;
+			color: $white;
+			margin: 0.5em 0 0.5em 0;
+		}
+		h2 {
+			color: $blue;
+			margin: 0.5em 0 0.8em 0;
 		}
 	}
 
+	.icon-logo {
+		width: em(210); 
+		height: em(210);
+		background-size: cover;
+	}
+
+	//body
 	.grid div div {
 		overflow: hidden;
 	}
 
-	.grid div div a img:after:hover {
-		position: absolute;
-		content: "";
-		background-color: green;
-		width: 100%;
-		height: 100%;
-		left: 0;
-		top: 0;
-		z-index: -1;
+	.page h1 {
+		font-size: 6em;
+	}
+
+	footer {
+		ul {
+			margin-top: em(48);
+		}
 	}
 
 }
@@ -251,9 +393,76 @@ li[class^="icon-"]:hover {
 		}
 	}
 
+	.row {
+		padding-left: 0;
+		padding-right: 0;
+	}
 
 	.pullup {
 		margin-top: -15.625rem;
+	}
+
+	.page h1 {
+		font-size: 8em;
+	}
+
+	//body
+	.ovrly {
+		overflow: hidden;
+		position: relative;
+		display: block;
+		z-index: 1;
+		transition: all 0.3s linear;
+		&:before {
+			position: absolute;
+			content: "";
+			background-color: $lightblue;
+			opacity: 0;
+			top: 0;
+			left: 0;
+			z-index: 35;
+			width: 100%;
+			height: 100%;
+			transition: all 0.3s linear;
+		}
+		&:hover:before {
+			opacity: 0.8;
+		}
+	}
+	.centerdiv {
+		background-color: transparent;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		position: absolute;
+		text-align: left;
+		width: 100%;
+		height: 100%;
+		opacity: 0;
+		z-index: 55;
+		&:hover {
+			opacity: 1;
+			transition: all 0.3s linear;
+			transition-delay: 0.2s;
+			padding-left: em(8);
+
+		}
+		span {
+			color: $white;
+		}
+
+	}
+	.text {
+		position: absolute;
+		top: em(6);
+		padding: 0 em(10) 0 em(3);
+		color: $white;
+		font-weight: 100;
+		font-size: 2em;
+		transition: all 0.3s linear;
+		text-shadow: none;
+		line-height: initial;
 	}
 }
 

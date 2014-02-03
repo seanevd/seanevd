@@ -3,8 +3,10 @@
 <head>
   <meta charset=utf-8 />
   <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+  <meta name="description" content="Sean E. Duncan web developer and designer, this is a portfolio site demonstrating the work that I have done.">
   <title> {% if page.title %} {{ page.title }} | {% endif %} Sean E. Duncan </title>
   <link rel="stylesheet" href="css/build/styles.css" />
+  <link rel="shortcut icon" href="favicon.ico">
   <script src="js/build/modernizr.js"></script>
   <script>
     /* grunticon Stylesheet Loader | https://github.com/filamentgroup/grunticon | (c) 2012 Scott Jehl, Filament Group, Inc. | MIT license. */
@@ -26,6 +28,16 @@
   <script src="js/build/production.min.js"></script>
   <script>
     $(document).foundation();
+  </script>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-47729030-1', 'seanevd.com');
+    ga('send', 'pageview');
+
   </script>
 </body>
 </html>
