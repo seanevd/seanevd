@@ -118,6 +118,7 @@ li[class^="icon-"] {
 	 border-radius: 50% 50% 50% 0;
 	opacity: 1;
 	transition: all 3s linear;
+	z-index: -5;
 }
 
 .icon-logo-grey:hover {
@@ -463,6 +464,13 @@ li[class^="icon-"] {
 		transition: all 0.3s linear;
 		text-shadow: none;
 		line-height: initial;
+	}
+	.bottom-browser {
+		box-shadow: 0 0 10px #333;
+		margin-bottom: em(-125);
+		margin-top: em(50);
+		z-index: -1;
+		position: relative;
 	}
 }
 
