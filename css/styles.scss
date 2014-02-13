@@ -118,7 +118,7 @@ li[class^="icon-"] {
 	 border-radius: 50% 50% 50% 0;
 	opacity: 1;
 	transition: all 3s linear;
-	z-index: -5;
+	z-index: 0;
 }
 
 .icon-logo-grey:hover {
@@ -153,6 +153,8 @@ li[class^="icon-"] {
 	padding-top: 1.75em;
 	padding-bottom: 2.75em;
 	margin: 1em;
+	z-index: 8;
+	position: relative;
 	p {
 		color: $white;
 	}
@@ -469,7 +471,7 @@ li[class^="icon-"] {
 		box-shadow: 0 0 10px #333;
 		margin-bottom: em(-125);
 		margin-top: em(50);
-		z-index: -1;
+		z-index: 4;
 		position: relative;
 	}
 }
