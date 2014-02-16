@@ -107,25 +107,6 @@ li[class^="icon-"] {
 	width: inherit;
 }
 
-.icon-logo-color, .icon-logo-grey {
-	 width: em(400); 
-	 height: em(400);
-	 margin: auto;
-	 position: fixed;
-	 left: em(-150);
-	 top: em(-150);
-	 transform: rotate(90deg);
-	 border-radius: 50% 50% 50% 0;
-	opacity: 1;
-	transition: all 3s linear;
-	z-index: 0;
-}
-
-.icon-logo-grey:hover {
-	opacity: 0;
-	transition: all 3s linear;
-}
-
 .icon-soundcloud, .icon-codepen {
 	background-size: em(20) em(20) !important;
 }
@@ -202,7 +183,7 @@ li[class^="icon-"] {
 		height: 20em;
 		right: -6em;
 		bottom: -6em;
-		animation: turning 15s infinite linear;
+		animation: turning 25s infinite linear;
 	}
 
 	.hex {
@@ -257,6 +238,32 @@ li[class^="icon-"] {
 			color: $white;
 			margin: em(10) em(10) em(15) em(10);
 		}
+	}
+
+	.icon-logo-color{
+		width: em(200); 
+		height: em(200);
+		background-size: em(200) em(200);
+		margin: auto;
+		border-radius: 50% 50% 50% 0;
+		display: block;
+		margin-top: 1.25em;
+		margin-bottom: em(8);
+	}
+
+	.pagec h1 {
+		margin: 0.5em 0;
+		word-break: break-all;
+		word-break: break-word;
+		hyphens: auto;
+	}
+
+	.bottom + .row {
+		background-color: $white;
+	}
+
+	.icon-logo-grey {
+		display: none;
 	}
 
 	//body
@@ -407,6 +414,31 @@ li[class^="icon-"] {
 
 	.page h1 {
 		font-size: 8em;
+	}
+
+	.pagec h1 {
+		margin: 0.67em 0;
+	}
+
+	.icon-logo-color, .icon-logo-grey {
+		width: em(400); 
+		height: em(400);
+		margin: auto;
+		position: fixed;
+		left: em(-150);
+		top: em(-150);
+		transform: rotate(90deg);
+		border-radius: 50% 50% 50% 0;
+		opacity: 1;
+		transition: all 3s linear;
+		z-index: 0;
+		display: initial;
+		background-size: initial;
+	}
+
+	.icon-logo-grey:hover {
+		opacity: 0;
+		transition: all 3s linear;
 	}
 
 	//body
