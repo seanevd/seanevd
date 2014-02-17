@@ -4,6 +4,7 @@
   <meta charset=utf-8 />
   <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
   <meta name="description" content="Description of the blog.seanevd website">
+  <meta name="author" content="Sean E. Duncan">
   <title>  blog.seanevd |  Sean E. Duncan </title>
   <link rel="stylesheet" href="../css/build/styles.css" />
   <link rel="shortcut icon" href="favicon.ico">
@@ -13,6 +14,16 @@
     window.grunticon=function(e){if(e&&3===e.length){var t=window,n=!!t.document.createElementNS&&!!t.document.createElementNS("http://www.w3.org/2000/svg","svg").createSVGRect,A=function(A){var o=t.document.createElement("link"),r=t.document.getElementsByTagName("script")[0];o.rel="stylesheet",o.href=e[A&&n?0:A?1:2],r.parentNode.insertBefore(o,r)},o=new t.Image;o.onerror=function(){A(!1)},o.onload=function(){A(1===o.width&&1===o.height)},o.src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="}};
     grunticon( [ "../css/build/icons/icons.data.svg.css", "../css/build/icons/icons.data.png.css", "../css/build/icons/icons.fallback.css" ] );</script>
   <noscript><link href="css/build/icons/icons.fallback.css" rel="stylesheet"></noscript>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-47729030-1', 'seanevd.com');
+    ga('send', 'pageview');
+
+  </script>
 </head>
 <body>
  
@@ -39,6 +50,11 @@
 	<div class="small-12 columns">
 		<p><a href="http://blog.seanevd.com">Blog.seanevd</a> was initially an effort to experiment with the new blogging platform <a href="http://ghost.org">Ghost</a>. Soon after experimenting with Ghost, I found out that I needed to make some blog posts for a class I was in; so I decided to make Ghost my blogging platform. Publishing the Ghost CMS to production wasn't easy. I undertook the process back when it was at 0.3, so I was basically on my own for server setup. This was my first time experimenting with node.js and an Amazon EC2 instance. I was also fairly new to Handlebars, it was fun to learn more about this Node library coming from a PHP background. There was a lot of backend effort but it didn't take long to make the site live.</p>
 		<p>I spent some time customizing the theme and used Sass for faster production. The site finally went live sometime in mid-October 2013. I later installed Disqus on my posts so people could comment about my tutorials. I have since been trying to work on some more quality posts to help organize my thoughts and spread the knowledge I have gained from various projects to others in the web development community.</p>
+	</div>
+</div>
+<div class="row">
+	<div class="small-12 columns">
+		<a href="http://blog.seanevd.com"><img data-interchange="[../images/blog.seanevd-browser.png, (default)], [../images/blog.seanevd-browser-578.png, (small)], [../images/blog.seanevd-browser-938.png, (medium)], [../images/blog.seanevd-browser.png, (large)]" class="bottom-browser" alt="blog.seanevd in browser"></a>
 	</div>
 </div>
 
@@ -77,16 +93,6 @@
   <script src="../js/build/production.min.js"></script>
   <script>
     $(document).foundation();
-  </script>
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-47729030-1', 'seanevd.com');
-    ga('send', 'pageview');
-
   </script>
 </body>
 </html>

@@ -1,6 +1,8 @@
 ---
 layout: page
 title: Variegated Design
+site: http://variegateddesign.com
+name: variegated
 ---
 <div class="row">
 	<div class="small-12 columns">
@@ -11,5 +13,7 @@ title: Variegated Design
 	</div>
 </div>
 <div class="row">
-	<div class="small-12 columns"><img src="../images/variegated-browser1.jpg" class="bottom-browser" alt="variegated in browser"></div>
+	<div class="small-12 columns">
+		<a href="{{page.site}}"><img data-interchange="[../images/{{page.name}}-browser.png, (default)], [../images/{{page.name}}-browser-578.png, (small)], [../images/{{page.name}}-browser-938.png, (medium)], [../images/{{page.name}}-browser.png, (large)]" class="bottom-browser" alt="{{page.title}} in browser"></a>
+	</div>
 </div>

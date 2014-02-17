@@ -116,6 +116,23 @@ module.exports = function(grunt) {
           cwd: 'screens/',
           dest: 'img/'
         }]
+      },
+      browser: {
+        options: {
+          sizes: [{
+            width: 938,
+          },
+          {
+            width: 578,
+          }
+          ]
+        },
+        files: [{
+          expand: true,
+          src: ['**.{jpg,gif,png}'],
+          cwd: 'browser/',
+          dest: 'img/'
+        }]
       }
   },
 

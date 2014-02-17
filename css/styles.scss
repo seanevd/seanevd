@@ -9,6 +9,7 @@ $darkred: #84252C;
 $blue: #1E2F41;
 $lightblue: #729896;
 $white: #F1DEB7; //rgba(241,222,183, 0.9)
+$black: #3f3a3a; //used for p
 
 $browser-context: 16; // Default
 
@@ -68,6 +69,7 @@ header {
 	position: relative;
 	overflow: hidden;
 	border-bottom: none;
+	z-index: 2;
 	.small-12, .large-12, .row {
 		height: 100%;
 	}
@@ -105,6 +107,7 @@ li[class^="icon-"] {
 	position: absolute;
 	text-align: center;
 	width: inherit;
+	animation: appear 0.8s linear;
 }
 
 .icon-soundcloud, .icon-codepen {
@@ -162,6 +165,16 @@ li[class^="icon-"] {
 }
 .left {
 	left: 0;
+}
+
+@keyframes appear {
+	from {opacity: 0;}
+	to {opacity: 1;}
+}
+
+@keyframes down {
+	from {opacity: 0; top: -10%;}
+	to {opacity: 0.8; top: 15%;}
 }
 
 @keyframes turning {
@@ -223,6 +236,28 @@ li[class^="icon-"] {
 		}
 	}
 
+	.init2 {
+		height: 10%;
+		width: 100%;
+		display: block;
+		z-index: 1;
+		position: relative;
+		.small-12, .row {
+			height: 100%;
+		}
+		.icon-downarrow {
+			height: 100%;
+			max-width: em(50);
+			margin: 0 auto;
+			position: relative;
+			display: block;
+			animation: down 1s linear;
+			top: 15%;
+			background-position: 0 0;
+			opacity: 0.8;
+		}
+	}
+
 	.icon-logo {
 		width: em(150); 
 		height: em(150);
@@ -267,12 +302,16 @@ li[class^="icon-"] {
 	}
 
 	//body
+	#recentwork {
+		padding-top: em(8);
+	}
+
 	.insetter {
 		padding-top: 1.875rem;
 	}
 
 	.content {
-		margin: em(200) 0 em(200) 0;
+		margin: em(50) 0 em(50) 0;
 	}
 
 	.row {
@@ -327,6 +366,21 @@ li[class^="icon-"] {
 	}
 	//footer
 	footer {
+		overflow: hidden;
+		.spin {
+			bottom: -13em;
+			right: 0;
+			z-index: -3;
+			.hex {
+				background-color: darken($darkred, 8%);
+				&:after {
+					background-color: darken($darkred, 8%);
+				}
+				&:before {
+					background-color: darken($darkred, 8%);
+				}
+			}
+		}
 		h3 {
 			color: $white;
 		}
@@ -356,6 +410,11 @@ li[class^="icon-"] {
 		right: -6em;
 		bottom: -6em;
 	}
+	footer {
+		.spin {
+			bottom: -34em;
+		}
+	}
 	.init {
 		h1 {
 			font-size: 2.5em;
@@ -374,13 +433,33 @@ li[class^="icon-"] {
 		background-size: cover;
 	}
 
+	.init2 {
+		.icon-downarrow {
+			transition: all 0.3s;
+			opacity: 0.8;
+			&:hover {
+				background-position: 0 em(4);
+				transition: all 0.3s;
+				opacity: 1
+			}
+		}
+	}
+
 	//body
+	#recentwork {
+		padding-top: 0;
+	}
+
 	.grid div div {
 		overflow: hidden;
 	}
 
 	.page h1 {
 		font-size: 6em;
+	}
+
+	.content {
+		margin: em(100) 0 em(100) 0;
 	}
 
 	footer {
@@ -430,7 +509,7 @@ li[class^="icon-"] {
 		transform: rotate(90deg);
 		border-radius: 50% 50% 50% 0;
 		opacity: 1;
-		transition: all 3s linear;
+		transition: opacity 3s linear;
 		z-index: 0;
 		display: initial;
 		background-size: initial;
@@ -487,6 +566,9 @@ li[class^="icon-"] {
 			color: $white;
 		}
 
+	}
+	.content {
+		margin: em(200) 0 em(200) 0;
 	}
 	.text {
 		position: absolute;
