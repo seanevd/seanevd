@@ -135,7 +135,7 @@ li[class^="icon-"] {
 .ultim {
 	background-color: $darkred;	
 	padding-top: 1.75em;
-	padding-bottom: 2.75em;
+	padding-bottom: 1.8em;
 	margin: 1em;
 	z-index: 8;
 	position: relative;
@@ -196,7 +196,7 @@ li[class^="icon-"] {
 		height: 20em;
 		right: -6em;
 		bottom: -6em;
-		animation: turning 25s infinite linear;
+		animation: turning 28s infinite linear;
 	}
 
 	.hex {
@@ -575,7 +575,7 @@ li[class^="icon-"] {
 		top: em(6);
 		padding: 0 em(10) 0 em(3);
 		color: $white;
-		font-weight: 100;
+		font-weight: 300;
 		font-size: 2em;
 		transition: all 0.3s linear;
 		text-shadow: none;
